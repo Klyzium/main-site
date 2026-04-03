@@ -213,7 +213,7 @@ function Navbar() {
           </span>
         </a>
 
-        {/* Desktop nav */}
+        {/* Desktop nav menu*/}
         <nav className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((l) => (
             <a
