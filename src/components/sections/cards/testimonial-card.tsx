@@ -13,14 +13,14 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
           <Star key={i} className="w-4 h-4 fill-current" />
         ))}
       </div>
-      <p className="text-slate-300 text-sm leading-relaxed mb-6 italic">"{testimonial.text}"</p>
+      <p className="text-slate-300 text-sm lg:text-base leading-relaxed mb-6 italic">"{testimonial.text}"</p>
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white text-sm font-bold">
           {testimonial.avatar}
         </div>
         <div>
-          <div className="text-white font-semibold text-sm">{testimonial.name}</div>
-          <div className="text-slate-500 text-xs">{testimonial.role}</div>
+          <div className="text-white font-semibold text-sm lg:text-base">{testimonial.name}</div>
+          <div className="text-slate-500 text-xs lg:text-sm">{testimonial.role}</div>
         </div>
       </div>
     </div>

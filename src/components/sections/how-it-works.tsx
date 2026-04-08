@@ -21,8 +21,8 @@ export function HowItWorks() {
                 <div className="relative w-20 h-20 rounded-2xl bg-white border-2 border-emerald-200 flex items-center justify-center mb-6 shadow-md shadow-emerald-50 z-10">
                   <span className="text-2xl font-black text-emerald-500">{step.number}</span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{step.description}</p>
+                <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
+                <p className="text-slate-500 text-sm lg:text-base leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>

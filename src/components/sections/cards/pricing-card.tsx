@@ -27,15 +27,15 @@ export function PricingCard({ plan }: PricingCardProps) {
       ) : null}
 
       <div className="mb-6">
-        <h3 className={cn("text-lg font-bold mb-1", plan.highlight ? "text-emerald-400" : "text-slate-500")}>
+        <h3 className={cn("text-lg lg:text-xl font-bold mb-1", plan.highlight ? "text-emerald-400" : "text-slate-500")}>
           {plan.name}
         </h3>
         <div className="flex items-end gap-2">
-          <span className={cn("text-4xl font-black", plan.highlight ? "text-white" : "text-slate-900")}>
+          <span className={cn("text-4xl lg:text-5xl font-black", plan.highlight ? "text-white" : "text-slate-900")}>
             {plan.price}
           </span>
         </div>
-        <span className="text-sm text-slate-400">{plan.period}</span>
+        <span className="text-sm lg:text-base text-slate-400">{plan.period}</span>
       </div>
 
       <ul className="space-y-3 mb-8">
@@ -44,7 +44,7 @@ export function PricingCard({ plan }: PricingCardProps) {
             <CheckCircle
               className={cn("w-4 h-4 flex-shrink-0", plan.highlight ? "text-emerald-400" : "text-emerald-500")}
             />
-            <span className={cn("text-sm", plan.highlight ? "text-slate-300" : "text-slate-600")}>
+            <span className={cn("text-sm lg:text-base", plan.highlight ? "text-slate-300" : "text-slate-600")}>
               {feature}
             </span>
           </li>
@@ -53,7 +53,7 @@ export function PricingCard({ plan }: PricingCardProps) {
 
       <Button
         className={cn(
-          "w-full rounded-xl h-12 font-bold",
+          "w-full rounded-xl h-12 lg:h-14 font-bold text-base lg:text-lg",
           plan.highlight
             ? "bg-emerald-500 hover:bg-emerald-400 text-white shadow-lg shadow-emerald-500/30"
             : "bg-slate-900 hover:bg-slate-800 text-white",

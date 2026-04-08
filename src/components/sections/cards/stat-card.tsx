@@ -9,7 +9,7 @@ export function StatCard({ value, label }: StatCardProps) {
       <div className="text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-teal-300 mb-2">
         {value}
       </div>
-      <div className="text-slate-400 text-sm font-medium">{label}</div>
+      <div className="text-slate-400 text-sm lg:text-base font-medium">{label}</div>
     </div>
   );
 }

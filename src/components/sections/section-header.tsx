@@ -20,14 +20,14 @@ export function SectionHeader({
     <div className={cn("text-center mb-16", className)}>
       <h2
         className={cn(
-          "text-4xl lg:text-5xl font-black leading-tight mb-4",
+          "text-4xl lg:text-6xl font-black leading-tight mb-4",
           isDark ? "text-white" : "text-slate-900",
         )}
       >
         {title}
       </h2>
       {description ? (
-        <p className={cn("text-lg max-w-2xl mx-auto", isDark ? "text-slate-400" : "text-slate-500")}>
+        <p className={cn("text-lg lg:text-xl max-w-3xl mx-auto", isDark ? "text-slate-400" : "text-slate-500")}>
           {description}
         </p>
       ) : null}

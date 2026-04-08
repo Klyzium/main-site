@@ -14,8 +14,8 @@ export function BenefitCard({ icon, title, description }: BenefitCardProps) {
         <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-500 flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
           {icon}
         </div>
-        <h3 className="text-lg font-bold text-slate-900 mb-2">{title}</h3>
-        <p className="text-slate-500 text-sm leading-relaxed">{description}</p>
+        <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-2">{title}</h3>
+        <p className="text-slate-500 text-sm lg:text-base leading-relaxed">{description}</p>
       </CardContent>
     </Card>
   );

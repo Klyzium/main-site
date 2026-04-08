@@ -15,7 +15,7 @@ export function FaqItem({ question, answer, isOpen, onToggle }: FaqItemProps) {
         onClick={onToggle}
         className="w-full flex items-center justify-between px-6 py-5 text-left gap-4 hover:bg-slate-50 transition-colors"
       >
-        <span className="font-semibold text-slate-900 text-sm">{question}</span>
+        <span className="font-semibold text-slate-900 text-sm lg:text-lg">{question}</span>
         <ChevronDown
           className={cn(
             "w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-200",
@@ -25,7 +25,7 @@ export function FaqItem({ question, answer, isOpen, onToggle }: FaqItemProps) {
       </button>
       {isOpen ? (
         <div className="px-6 pb-5">
-          <p className="text-slate-500 text-sm leading-relaxed">{answer}</p>
+          <p className="text-slate-500 text-sm lg:text-base leading-relaxed">{answer}</p>
         </div>
       ) : null}
     </div>
