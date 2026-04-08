@@ -1,12 +1,33 @@
+import { useLayoutEffect, useRef } from "react";
 import { ArrowRight, ChevronDown, Star, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { SOCIAL_INITIALS } from "@/content/landing";
+import { gsap } from "@/lib/gsap";
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  useLayoutEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      tl.from("[data-hero-badge]", { y: 18, autoAlpha: 0, duration: 0.45 })
+        .from("[data-hero-title]", { y: 28, autoAlpha: 0, duration: 0.6 }, "-=0.15")
+        .from("[data-hero-text]", { y: 22, autoAlpha: 0, duration: 0.45 }, "-=0.2")
+        .from("[data-hero-proof]", { y: 16, autoAlpha: 0, duration: 0.4 }, "-=0.12")
+        .from("[data-hero-mockup]", { y: 24, autoAlpha: 0, scale: 0.98, duration: 0.6 }, "-=0.35");
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="hero"
       className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950"
     >
@@ -22,14 +43,20 @@ export function Hero() {
         />
       </div>
 
-      <Container className="relative pt-24 pb-16 flex flex-col lg:flex-row items-center gap-16">
+      <Container className="relative pt-24 pb-10 max-[390px]:px-4 flex flex-col lg:flex-row items-center gap-5 sm:gap-7 lg:gap-16">
         <div className="flex-1 text-center lg:text-left">
-          <Badge className="mb-6 bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 backdrop-blur rounded-full px-4 py-1.5 text-sm font-semibold inline-flex items-center gap-2">
+          <Badge
+            data-hero-badge
+            className="mb-6 bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 backdrop-blur rounded-full px-4 max-[390px]:px-3 py-1.5 text-sm max-[390px]:text-xs font-semibold inline-flex items-center gap-2 max-[390px]:gap-1"
+          >
             <Zap className="w-3.5 h-3.5" />
             Landing pages que convertem de verdade
           </Badge>
 
-          <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6">
+          <h1
+            data-hero-title
+            className="text-5xl max-[390px]:text-4xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.05] tracking-tight mb-5"
+          >
             Transforme{" "}
             <span className="relative inline-block">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
@@ -53,15 +80,18 @@ export function Hero() {
             com páginas de alta conversão
           </h1>
 
-          <p className="text-lg lg:text-xl text-slate-300 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+          <p
+            data-hero-text
+            className="text-lg max-[390px]:text-base lg:text-xl text-slate-300 max-w-xl mx-auto lg:mx-0 mb-5 sm:mb-4 lg:mb-10 leading-relaxed"
+          >
             Criamos landing pages estratégicas para negócios que querem crescer de verdade. Design, copy e tecnologia
             trabalhando pelos seus resultados.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div className="flex flex-col mb-5 sm:flex-row gap-2 sm:gap-4 justify-center lg:justify-start">
             <Button
               size="lg"
-              className="bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-base shadow-2xl shadow-emerald-500/30 rounded-full px-8 h-14 group"
+              className="bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-base max-[390px]:text-sm shadow-2xl shadow-emerald-500/30 rounded-full px-8 max-[390px]:px-6 h-14 group"
             >
               Quero minha landing page
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -69,13 +99,16 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white/20 text-white hover:bg-white/10 rounded-full px-8 h-14 backdrop-blur font-semibold"
+              className="border-white/20 text-white hover:bg-white/10 rounded-full px-8 max-[390px]:px-6 h-14 backdrop-blur font-semibold"
             >
               Ver exemplos
             </Button>
           </div>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center lg:items-start gap-6 justify-center lg:justify-start">
+          <div
+            data-hero-proof
+            className="mt-2 sm:mt-3 lg:mt-10 flex flex-col sm:flex-row items-center lg:items-start gap-3 sm:gap-6 justify-center lg:justify-start"
+          >
             <div className="flex -space-x-3">
               {SOCIAL_INITIALS.map((initials) => (
                 <div
@@ -98,7 +131,7 @@ export function Hero() {
         </div>
 
         <div className="flex-1 w-full max-w-md lg:max-w-none">
-          <div className="relative">
+          <div data-hero-mockup className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-white/10">
               <div className="bg-slate-800 px-4 py-3 flex items-center gap-2">
                 <div className="flex gap-1.5">

@@ -18,7 +18,6 @@ export function Results() {
 
       <Container className="relative">
         <SectionHeader
-          badge="Resultados reais"
           title="Números que comprovam"
           description="Mais de 200 negócios já escolheram a Klyzium para crescer online."
           tone="dark"

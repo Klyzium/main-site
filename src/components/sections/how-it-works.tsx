@@ -8,7 +8,6 @@ export function HowItWorks() {
     <Section id="como-funciona" className="bg-slate-50">
       <Container>
         <SectionHeader
-          badge="Processo"
           title="Como funciona"
           description="Do briefing à publicação em poucos passos. Simples, rápido e sem dor de cabeça."
         />

@@ -21,7 +21,6 @@ export function Benefits() {
     <Section className="bg-white">
       <Container>
         <SectionHeader
-          badge="Por que a Klyzium?"
           title={
             <>
               Tudo que você precisa para <span className="text-emerald-500">converter mais</span>

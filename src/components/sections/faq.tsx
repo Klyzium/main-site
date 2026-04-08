@@ -11,7 +11,7 @@ export function FAQ() {
   return (
     <Section id="faq" className="bg-slate-50">
       <Container className="max-w-3xl">
-        <SectionHeader badge="Dúvidas" title="Perguntas frequentes" />
+        <SectionHeader title="Perguntas frequentes" />
 
         <div className="space-y-3">
           {FAQS.map((item, index) => (

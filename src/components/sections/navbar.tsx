@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { Menu, MessageCircle, TrendingUp, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS } from "@/content/landing";
@@ -6,6 +6,26 @@ import { NAV_LINKS } from "@/content/landing";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith("#")) return;
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    event.preventDefault();
+
+    const headerOffset = 92;
+    const targetTop =
+      target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: Math.max(targetTop, 0),
+      behavior: "smooth",
+    });
+
+    setOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -34,6 +54,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
+              onClick={(event) => handleNavClick(event, link.href)}
               className={`text-sm font-medium transition-colors hover:text-emerald-500 ${
                 scrolled ? "text-slate-600" : "text-white/80"
               }`}
@@ -64,14 +85,14 @@ export function Navbar() {
 
       {open ? (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-slate-100 py-4 px-6 flex flex-col gap-4">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="text-slate-700 font-medium hover:text-emerald-500 transition-colors"
-            >
-              {link.label}
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(event) => handleNavClick(event, link.href)}
+                className="text-slate-700 font-medium hover:text-emerald-500 transition-colors"
+              >
+                {link.label}
             </a>
           ))}
           <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full mt-2">
