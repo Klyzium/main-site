@@ -10,7 +10,7 @@ export function FAQ() {
 
   return (
     <Section id="faq" className="bg-slate-50">
-      <Container className="max-w-3xl lg:max-w-5xl">
+      <Container className="max-w-3xl xl:max-w-3xl">
         <SectionHeader title="Perguntas frequentes" />
 
         <div className="space-y-3">

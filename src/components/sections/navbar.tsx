@@ -33,6 +33,13 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -80,8 +87,34 @@ export function Navbar() {
         </button>
       </div>
 
-      {open ? (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-slate-100 py-4 px-6 flex flex-col gap-4">
+      <div
+        className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <button
+          aria-label="Fechar menu"
+          className="absolute inset-0 bg-slate-950/45 backdrop-blur-[1px]"
+          onClick={() => setOpen(false)}
+        />
+
+        <aside
+          className={`absolute top-0 right-0 h-full w-[84vw] max-w-sm bg-white border-l border-slate-100 shadow-2xl px-6 py-6 flex flex-col gap-6 transition-transform duration-300 ${
+            open ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="flex items-center justify-between">
+            <span className="font-bold text-slate-900">Menu</span>
+            <button
+              onClick={() => setOpen(false)}
+              className="p-2 rounded-lg text-slate-600 hover:bg-slate-100"
+              aria-label="Fechar menu"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          <nav className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -90,13 +123,15 @@ export function Navbar() {
                 className="text-slate-700 font-medium hover:text-emerald-500 transition-colors"
               >
                 {link.label}
-            </a>
-          ))}
-          <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full mt-2">
+              </a>
+            ))}
+          </nav>
+
+          <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full mt-auto">
             Falar no WhatsApp
           </Button>
-        </div>
-      ) : null}
+        </aside>
+      </div>
     </header>
   );
 }
