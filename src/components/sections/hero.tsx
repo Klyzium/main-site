@@ -45,13 +45,15 @@ export function Hero() {
 
       <Container className="relative pt-24 pb-10 max-[390px]:px-4 flex flex-col lg:flex-row items-center gap-5 sm:gap-7 lg:gap-20">
         <div className="flex-1 text-center lg:text-left">
-          <Badge
-            data-hero-badge
-            className="mb-6 bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 backdrop-blur rounded-full px-4 lg:px-5 max-[390px]:px-3 py-1.5 text-sm lg:text-base max-[390px]:text-xs font-semibold inline-flex items-center gap-2 max-[390px]:gap-1"
-          >
-            <Zap className="w-3.5 h-3.5" />
-            Sites profissionais que convertem de verdade
-          </Badge>
+          <div className="mb-6 flex justify-center">
+            <Badge
+              data-hero-badge
+              className="w-fit bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 backdrop-blur rounded-full px-4 lg:px-5 max-[390px]:px-3 py-1.5 text-sm lg:text-base max-[390px]:text-xs font-semibold inline-flex items-center gap-2 max-[390px]:gap-1"
+            >
+              <Zap className="w-3.5 h-3.5" />
+              Sites profissionais que convertem de verdade
+            </Badge>
+          </div>
 
           <h1
             data-hero-title
