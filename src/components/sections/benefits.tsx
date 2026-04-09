@@ -1,4 +1,4 @@
-import { BarChart3, MousePointerClick, Rocket, Shield, Target, Zap } from "lucide-react";
+﻿import { BarChart3, MousePointerClick, Rocket, Shield, Target, Zap } from "lucide-react";
 import type { ReactNode } from "react";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
@@ -23,10 +23,10 @@ export function Benefits() {
         <SectionHeader
           title={
             <>
-              Tudo que você precisa para <span className="text-emerald-500">converter mais</span>
+              Tudo que você precisa para <span className="text-emerald-500">vender mais com seu site</span>
             </>
           }
-          description="Nossas páginas são construídas com estratégia, não só com design. Cada elemento existe para fazer você vender mais."
+          description="Projetos com estratégia comercial, visual premium e foco real em contato humanizado pelo WhatsApp."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -43,3 +43,4 @@ export function Benefits() {
     </Section>
   );
 }
+

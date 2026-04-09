@@ -1,4 +1,4 @@
-import { Container } from "@/components/layout/container";
+﻿import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { PricingCard } from "@/components/sections/cards/pricing-card";
 import { SectionHeader } from "@/components/sections/section-header";
@@ -10,7 +10,7 @@ export function Pricing() {
       <Container>
         <SectionHeader
           title="Escolha o plano ideal"
-          description="Sem mensalidade e sem surpresas. Você paga uma vez e a página é sua."
+          description="Implantação profissional com opção de hospedagem mensal em boleto, Pix ou Pix parcelado."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
@@ -22,3 +22,4 @@ export function Pricing() {
     </Section>
   );
 }
+

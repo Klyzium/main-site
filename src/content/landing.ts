@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   Benefit,
   FaqItemData,
   NavLink,
@@ -19,66 +19,66 @@ export const NAV_LINKS: NavLink[] = [
 export const BENEFITS: Benefit[] = [
   {
     icon: "mousePointerClick",
-    title: "Alta taxa de conversão",
+    title: "Sites focados em conversão",
     description:
-      "Páginas criadas para transformar visitantes em clientes com CTAs estratégicos e copy persuasiva.",
+      "Estrutura pensada para transformar visitantes em contatos reais no WhatsApp, com CTA estratégico em pontos-chave.",
   },
   {
     icon: "zap",
-    title: "Velocidade de carregamento",
+    title: "Performance profissional",
     description:
-      "Sites ultrarrápidos que não perdem leads por lentidão, com performance no topo do PageSpeed.",
+      "Sites rápidos e estáveis, prontos para mobile e desktop, sem perder oportunidades por lentidão.",
   },
   {
     icon: "target",
-    title: "Foco no objetivo",
+    title: "SEO básico ou avançado",
     description:
-      "Cada seção é construída com propósito para guiar o visitante até a ação desejada sem distrações.",
+      "Você escolhe o nível de SEO para melhorar o posicionamento no Google e atrair mais clientes qualificados.",
   },
   {
     icon: "barChart3",
-    title: "Métricas e análises",
+    title: "Decisão com dados",
     description:
-      "Integração com Google Analytics, Meta Pixel e heatmaps para otimização contínua.",
+      "Integração com Google Analytics e Pixel para acompanhar resultados e evoluir o projeto com clareza.",
   },
   {
     icon: "shield",
-    title: "Segurança e confiabilidade",
+    title: "Hospedagem própria",
     description:
-      "Hospedagem confiável, SSL incluso e uptime estável para não perder oportunidades.",
+      "Infraestrutura própria com suporte próximo, estabilidade e acompanhamento contínuo do seu site.",
   },
   {
     icon: "rocket",
-    title: "Entrega rápida",
+    title: "Pagamento sem travar caixa",
     description:
-      "Do briefing à página no ar em até 5 dias úteis, sem burocracia e sem enrolação.",
+      "Modelo mensal com boleto, Pix ou Pix parcelado, sem obrigar pacote anual pago de uma vez.",
   },
 ];
 
 export const STEPS: Step[] = [
   {
     number: "01",
-    title: "Briefing estratégico",
+    title: "Diagnóstico estratégico",
     description:
-      "Entendemos seu negócio, público-alvo e objetivos de conversão em uma reunião focada.",
+      "Entendemos seu negócio, seu público e o objetivo comercial do site em uma conversa consultiva.",
   },
   {
     number: "02",
-    title: "Design e copywriting",
+    title: "Design e posicionamento",
     description:
-      "Nossa equipe cria layout e textos persuasivos alinhados à sua identidade visual.",
+      "Criamos um visual premium com texto orientado para gerar autoridade e incentivar o contato.",
   },
   {
     number: "03",
-    title: "Desenvolvimento",
+    title: "Desenvolvimento e SEO",
     description:
-      "A página é desenvolvida com tecnologia moderna, responsiva e otimizada para performance.",
+      "Publicamos seu site com performance, responsividade e configurações de SEO no nível contratado.",
   },
   {
     number: "04",
-    title: "Revisão e publicação",
+    title: "Entrega e acompanhamento",
     description:
-      "Você aprova, ajustamos os detalhes finais e publicamos no seu domínio com agilidade.",
+      "Seu site vai ao ar com hospedagem própria e suporte humanizado para manter tudo funcionando.",
   },
 ];
 
@@ -94,69 +94,67 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Fernanda Costa",
     role: "Nutricionista",
     stars: 5,
-    text: "Minha taxa de conversão saiu de 2% para 11% após a nova landing page. O investimento se pagou na primeira semana.",
+    text: "Nosso site novo gerou mais contatos no WhatsApp em poucas semanas. Atendimento impecável e muito próximo.",
     avatar: "FC",
   },
   {
     name: "Ricardo Melo",
     role: "Dono de academia",
     stars: 5,
-    text: "Profissionalismo do início ao fim. A página ficou moderna, rápida e converte muito bem.",
+    text: "Visual premium, site rápido e estratégia clara de conversão. Projeto acima do que eu esperava.",
     avatar: "RM",
   },
   {
     name: "Ana Beatriz Lima",
     role: "Consultora de imagem",
     stars: 5,
-    text: "Antes eu tinha um site bonito, mas que não vendia. Agora tenho uma máquina de captação de leads.",
+    text: "Fizemos o site com hospedagem mensal e ficou muito mais fácil de manter. Processo leve e profissional.",
     avatar: "AL",
   },
 ];
 
 export const PLANS: Plan[] = [
   {
-    name: "Starter",
-    price: "R$ 997",
-    period: "pagamento único",
+    name: "Site Essencial",
+    price: "R$ 1.497",
+    period: "implantação",
     features: [
-      "1 landing page",
+      "Site profissional de apresentação",
       "Até 5 seções",
-      "Formulário de captação",
-      "Responsiva (mobile)",
       "Integração com WhatsApp",
-      "Entrega em 5 dias úteis",
+      "SEO básico inicial",
+      "Mobile e desktop",
+      "Entrega em até 5 dias úteis",
     ],
     cta: "Começar agora",
   },
   {
-    name: "Pro",
-    price: "R$ 1.997",
-    period: "pagamento único",
+    name: "Site Pro",
+    price: "R$ 2.497",
+    period: "implantação",
     highlight: true,
-    badge: "Mais popular",
+    badge: "Mais escolhido",
     features: [
-      "1 landing page",
-      "Seções ilimitadas",
-      "Copywriting incluso",
-      "Pixel e Analytics",
-      "Pop-up de saída",
-      "Teste A/B básico",
-      "Suporte por 30 dias",
+      "Site completo com seções ilimitadas",
+      "Copy estratégica de conversão",
+      "SEO avançado on-page",
+      "Pixel + Analytics",
+      "Ajustes de performance",
+      "Suporte inicial pós-entrega",
     ],
     cta: "Quero o Pro",
   },
   {
-    name: "Scale",
-    price: "R$ 3.497",
-    period: "pagamento único",
+    name: "Site + Software",
+    price: "Sob consulta",
+    period: "projeto personalizado",
     features: [
-      "Até 3 landing pages",
-      "Funil completo",
-      "Copywriting avançado",
-      "Integração com CRM",
-      "Automação de e-mail",
-      "Relatório mensal",
-      "Suporte por 90 dias",
+      "Site + desenvolvimento sob medida",
+      "Fluxos e funcionalidades específicas",
+      "SEO técnico avançado",
+      "Integrações com sistemas",
+      "Hospedagem própria opcional",
+      "Acompanhamento consultivo",
     ],
     cta: "Falar com consultor",
   },
@@ -164,30 +162,31 @@ export const PLANS: Plan[] = [
 
 export const FAQS: FaqItemData[] = [
   {
-    question: "Quanto tempo leva para ficar pronta?",
+    question: "Vocês fazem somente landing page?",
     answer:
-      "O prazo padrão é de 5 dias úteis após a aprovação do briefing. No plano Scale, pode chegar a 10 dias úteis.",
+      "Não. Nosso foco principal é criação de sites profissionais, além de landing pages e desenvolvimento de software sob medida.",
   },
   {
-    question: "Preciso ter domínio e hospedagem?",
+    question: "O site já inclui SEO?",
     answer:
-      "Se você já tiver, ótimo. Se não, ajudamos na contratação. A hospedagem do primeiro ano pode ser inclusa dependendo do plano.",
+      "Sim. Você pode contratar SEO básico ou avançado, de acordo com o objetivo de posicionamento no Google.",
   },
   {
-    question: "Vocês fazem manutenção após a entrega?",
+    question: "Como funciona a hospedagem?",
     answer:
-      "Sim. Os planos Pro e Scale incluem suporte técnico pós-entrega. Fora desse período, oferecemos pacotes avulsos.",
+      "Temos hospedagem própria opcional, com suporte próximo e plano mensal para facilitar a continuidade do projeto.",
   },
   {
-    question: "A landing page é responsiva para celular?",
+    question: "Quais formas de pagamento vocês aceitam?",
     answer:
-      "Sim. Todas as páginas são desenvolvidas com abordagem mobile-first para funcionar bem em qualquer dispositivo.",
+      "Trabalhamos com boleto, Pix e Pix parcelado no modelo mensal, evitando o custo anual fechado em uma única cobrança.",
   },
   {
-    question: "Posso pedir alterações durante o projeto?",
+    question: "Quais segmentos vocês atendem?",
     answer:
-      "Sim. Cada plano inclui rodadas de revisão. Mudanças fora do escopo são orçadas à parte.",
+      "Atendemos médicos, dentistas, advogados e pequenos e médios comércios que buscam presença digital profissional.",
   },
 ];
 
 export const SOCIAL_INITIALS = ["FC", "RM", "AL", "JP"];
+

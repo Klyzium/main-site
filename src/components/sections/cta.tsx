@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle, Phone } from "lucide-react";
+﻿import { ArrowRight, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
@@ -13,10 +13,11 @@ export function CTA() {
 
       <Container className="relative max-w-3xl text-center">
         <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
-          Pronto para ter uma página que converte de verdade?
+          Pronto para ter um site premium que gera contatos reais?
         </h2>
         <p className="text-emerald-50 text-lg mb-10 max-w-xl mx-auto">
-          Fale agora com nosso time pelo WhatsApp e receba uma proposta personalizada para o seu negócio.
+          Fale com nosso time no WhatsApp e receba uma proposta personalizada para o seu negócio, com atendimento
+          humano do início ao pós-entrega.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
@@ -40,3 +41,4 @@ export function CTA() {
     </Section>
   );
 }
+

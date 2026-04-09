@@ -1,4 +1,4 @@
-import { Container } from "@/components/layout/container";
+﻿import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/sections/section-header";
 import { STEPS } from "@/content/landing";
@@ -9,7 +9,7 @@ export function HowItWorks() {
       <Container>
         <SectionHeader
           title="Como funciona"
-          description="Do briefing à publicação em poucos passos. Simples, rápido e sem dor de cabeça."
+          description="Da estratégia até o site no ar com SEO e suporte. Processo consultivo, rápido e sem complicação."
         />
 
         <div className="relative">
@@ -31,3 +31,4 @@ export function HowItWorks() {
     </Section>
   );
 }
+

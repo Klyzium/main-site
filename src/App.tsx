@@ -98,7 +98,13 @@ export default function App() {
   return (
     <div ref={rootRef} className="min-h-screen font-sans antialiased">
       <div ref={preloaderRef} className="fixed inset-0 z-[120] flex items-center justify-center bg-slate-950">
-        <svg ref={logoRef} width="165" height="21" viewBox="0 0 165 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          ref={logoRef}
+          viewBox="0 0 165 21"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-[260px] md:w-[360px] lg:w-[460px] h-auto"
+        >
           <path d="M144 21V0H150V3H153V6H156V3H159V0H165V21H159V9H156V15H153V9H150V21H144Z" />
           <path d="M123 21V18H120V0H126V18H135V0H141V18H138V21H123Z" />
           <path d="M99 21V18H105V3H99V0H117V3H111V18H117V21H99Z" />

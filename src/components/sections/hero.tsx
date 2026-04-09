@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+﻿import { useLayoutEffect, useRef } from "react";
 import { ArrowRight, ChevronDown, Star, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -50,7 +50,7 @@ export function Hero() {
             className="mb-6 bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 backdrop-blur rounded-full px-4 lg:px-5 max-[390px]:px-3 py-1.5 text-sm lg:text-base max-[390px]:text-xs font-semibold inline-flex items-center gap-2 max-[390px]:gap-1"
           >
             <Zap className="w-3.5 h-3.5" />
-            Landing pages que convertem de verdade
+            Sites profissionais que convertem de verdade
           </Badge>
 
           <h1
@@ -60,7 +60,7 @@ export function Hero() {
             Transforme{" "}
             <span className="relative inline-block">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
-                cliques em clientes
+                visitas em clientes
               </span>
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
                 <path
@@ -77,15 +77,15 @@ export function Hero() {
                 </defs>
               </svg>
             </span>{" "}
-            com páginas de alta conversão
+            com sites de alta conversão
           </h1>
 
           <p
             data-hero-text
             className="text-lg max-[390px]:text-base lg:text-2xl text-slate-300 max-w-xl lg:max-w-2xl mx-auto lg:mx-0 mb-5 sm:mb-4 lg:mb-10 leading-relaxed"
           >
-            Criamos landing pages estratégicas para negócios que querem crescer de verdade. Design, copy e tecnologia
-            trabalhando pelos seus resultados.
+            Criamos sites, landing pages e software sob medida com SEO básico ou avançado para melhorar seu
+            posicionamento no Google e gerar mais contatos no WhatsApp.
           </p>
 
           <div className="flex flex-col mb-5 sm:flex-row gap-2 sm:gap-4 justify-center lg:justify-start">
@@ -93,7 +93,7 @@ export function Hero() {
               size="lg"
               className="bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-base lg:text-lg max-[390px]:text-sm shadow-2xl shadow-emerald-500/30 rounded-full px-8 lg:px-10 max-[390px]:px-6 h-14 lg:h-16 group"
             >
-              Quero minha landing page
+              Quero meu site profissional
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
@@ -101,7 +101,7 @@ export function Hero() {
               variant="outline"
               className="border-white/20 text-white hover:bg-white/10 rounded-full px-8 lg:px-10 max-[390px]:px-6 h-14 lg:h-16 backdrop-blur font-semibold lg:text-lg"
             >
-              Ver exemplos
+              Ver exemplos de sites
             </Button>
           </div>
 
@@ -140,7 +140,7 @@ export function Hero() {
                   <div className="w-3 h-3 rounded-full bg-emerald-500/70" />
                 </div>
                 <div className="flex-1 mx-4 bg-slate-700/60 rounded-full px-3 py-1 text-slate-400 text-xs">
-                  seudominio.com.br
+                  seusiteprofissional.com.br
                 </div>
               </div>
               <div className="bg-gradient-to-b from-emerald-900 to-slate-900 p-6 min-h-[280px] flex flex-col gap-4">
@@ -160,11 +160,11 @@ export function Hero() {
             </div>
 
             <div className="absolute -top-4 -right-4 bg-amber-400 text-amber-950 text-xs font-black px-3 py-1.5 rounded-full shadow-lg rotate-3">
-              +11% conversão
+              SEO pronto para crescer
             </div>
             <div className="absolute -bottom-4 -left-4 bg-white text-slate-800 text-xs font-bold px-3 py-2 rounded-xl shadow-xl flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              Novo lead chegou
+              Novo contato no WhatsApp
             </div>
           </div>
         </div>
@@ -179,3 +179,4 @@ export function Hero() {
     </section>
   );
 }
+
