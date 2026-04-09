@@ -2,9 +2,10 @@ import { useEffect, useState, type MouseEvent } from "react";
 import { Menu, MessageCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS } from "@/content/landing";
+import { gsap } from "@/lib/gsap";
 
 export function Navbar() {
-  const logoSrc = "/logo/Design%20sem%20nome.svg";
+  const logoSrc = "/logo/logo.png";
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -20,9 +21,10 @@ export function Navbar() {
     const targetTop =
       target.getBoundingClientRect().top + window.scrollY - headerOffset;
 
-    window.scrollTo({
-      top: Math.max(targetTop, 0),
-      behavior: "smooth",
+    gsap.to(window, {
+      duration: 1.1,
+      ease: "power3.inOut",
+      scrollTo: { y: Math.max(targetTop, 0), autoKill: true },
     });
 
     setOpen(false);
@@ -51,14 +53,26 @@ export function Navbar() {
         }`}
       >
         <div className="max-w-7xl xl:max-w-[90rem] mx-auto px-6 lg:px-8 flex items-center justify-between">
-          <a href="#hero" className="flex items-center group">
+          <a href="#hero" onClick={(event) => handleNavClick(event, "#hero")} className="flex items-center gap-2 group">
             <img
               src={logoSrc}
               alt="Logo Klyzium"
-              className={`w-12 h-12 lg:w-20 lg:h-20 object-contain origin-left scale-[4.1] lg:scale-300 transition-transform ${
+              className={`h-10 w-10 lg:h-11 lg:w-11 object-contain transition-transform ${
                 scrolled ? "" : "drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)]"
               }`}
             />
+            <div className="flex flex-col leading-tight">
+              <span
+                className={`text-sm lg:text-base font-bold tracking-[0.14em] ${
+                  scrolled ? "text-slate-900" : "text-white"
+                }`}
+              >
+                KLYZIUM
+              </span>
+              <span className={`text-[9px] lg:text-[10px] ${scrolled ? "text-slate-500" : "text-white/80"}`}>
+                Web Creation &amp; Software Development
+              </span>
+            </div>
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
