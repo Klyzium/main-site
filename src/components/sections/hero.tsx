@@ -55,7 +55,7 @@ export function Hero() {
 
           <h1
             data-hero-title
-            className="text-5xl max-[390px]:text-4xl lg:text-7xl xl:text-[5.5rem] font-black text-white leading-[1.03] tracking-tight mb-5"
+            className="text-center text-5xl max-[390px]:text-4xl lg:text-7xl xl:text-[5.5rem] font-black text-white leading-[1.03] tracking-tight mb-5"
           >
             Transforme{" "}
             <span className="relative inline-block">
