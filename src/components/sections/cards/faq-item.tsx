@@ -19,7 +19,7 @@ export function FaqItem({ question, answer, isOpen, onToggle }: FaqItemProps) {
         <ChevronDown
           className={cn(
             "w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-200",
-            isOpen && "rotate-180 text-emerald-500",
+            isOpen && "rotate-180 text-sky-500",
           )}
         />
       </button>

@@ -9,9 +9,9 @@ interface BenefitCardProps {
 
 export function BenefitCard({ icon, title, description }: BenefitCardProps) {
   return (
-    <Card className="group border border-slate-100 hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-50 transition-all duration-300 rounded-2xl">
+    <Card className="group border border-slate-100 transition-all duration-300 rounded-2xl hover:border-sky-200 hover:shadow-lg hover:shadow-sky-100">
       <CardContent className="p-6">
-        <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-500 flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
+        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-50 text-sky-500 transition-colors duration-300 group-hover:bg-sky-500 group-hover:text-white">
           {icon}
         </div>
         <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-2">{title}</h3>

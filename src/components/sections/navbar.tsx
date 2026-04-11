@@ -81,7 +81,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(event) => handleNavClick(event, link.href)}
-                className={`text-sm lg:text-base font-semibold transition-colors hover:text-emerald-400 ${
+                className={`text-sm lg:text-base font-semibold transition-colors hover:text-sky-400 ${
                   scrolled ? "text-slate-700" : "text-white"
                 }`}
               >
@@ -140,7 +140,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(event) => handleNavClick(event, link.href)}
-                className="text-slate-700 font-medium hover:text-emerald-500 transition-colors"
+                className="text-slate-700 font-medium hover:text-sky-500 transition-colors"
               >
                 {link.label}
               </a>

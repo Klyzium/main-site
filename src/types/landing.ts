@@ -31,14 +31,30 @@ export interface Testimonial {
   avatar: string;
 }
 
+export interface ClientLogo {
+  name: string;
+  logo: string;
+  url: string;
+}
+
 export interface Plan {
   name: string;
   price: string;
+  oldPrice?: string;
   period: string;
   highlight?: boolean;
   badge?: string;
+  idealFor?: string;
   features: string[];
   cta: string;
+}
+
+export interface MaintenancePlan {
+  name: string;
+  badge?: string;
+  highlight?: boolean;
+  features: string[];
+  price: string;
 }
 
 export interface FaqItemData {

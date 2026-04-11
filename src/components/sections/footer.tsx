@@ -17,10 +17,10 @@ export function Footer() {
         <p className="text-sm text-center">&copy; {new Date().getFullYear()} Klyzium. Todos os direitos reservados.</p>
 
         <div className="flex gap-6 text-sm">
-          <a href="#" className="hover:text-emerald-400 transition-colors">
+          <a href="#" className="hover:text-sky-400 transition-colors">
             Privacidade
           </a>
-          <a href="#" className="hover:text-emerald-400 transition-colors">
+          <a href="#" className="hover:text-sky-400 transition-colors">
             Termos
           </a>
         </div>

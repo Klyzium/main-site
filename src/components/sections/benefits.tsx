@@ -23,7 +23,7 @@ export function Benefits() {
         <SectionHeader
           title={
             <>
-              Tudo que você precisa para <span className="text-emerald-500">vender mais com seu site</span>
+              Tudo que você precisa para <span className="text-sky-500">vender mais com seu site</span>
             </>
           }
           description="Projetos com estratégia comercial, visual premium e foco real em contato humanizado pelo WhatsApp."
