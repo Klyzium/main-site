@@ -8,6 +8,7 @@ import { HowItWorks } from "@/components/sections/how-it-works";
 import { Navbar } from "@/components/sections/navbar";
 import { Pricing } from "@/components/sections/pricing";
 import { Results } from "@/components/sections/results";
+import { WhatsappButton } from "@/components/whatsapp-button";
 import { gsap } from "@/lib/gsap";
 
 export default function App() {
@@ -18,7 +19,6 @@ export default function App() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const desktopStack = window.matchMedia("(min-width: 1024px)").matches;
       const preloader = preloaderRef.current;
       const logo = logoRef.current;
       const paths = logo?.querySelectorAll("path");
@@ -31,46 +31,8 @@ export default function App() {
 
         gsap.set(sections, { autoAlpha: 1 });
 
-        if (desktopStack && sections.length > 1) {
-          const heroSection = sections[0];
-          const firstSectionAfterHero = sections[1];
-          const overlapDistance = 260;
-
-          gsap.set(sections, { position: "relative" });
-          gsap.set(sections[0], { zIndex: 1 });
-          gsap.set(firstSectionAfterHero, { zIndex: 2 });
-
-          gsap.fromTo(
-            firstSectionAfterHero,
-            { y: overlapDistance, boxShadow: "0 -22px 60px rgba(2, 6, 23, 0.35)" },
-            {
-              y: 0,
-              boxShadow: "0 0 0 rgba(2, 6, 23, 0)",
-              ease: "none",
-              scrollTrigger: {
-                trigger: firstSectionAfterHero,
-                start: "top bottom",
-                end: `top top+=${overlapDistance}`,
-                scrub: true,
-              },
-            },
-          );
-
-          gsap.to(heroSection, {
-            y: -48,
-            scale: 0.985,
-            ease: "none",
-            scrollTrigger: {
-              trigger: firstSectionAfterHero,
-              start: "top bottom",
-              end: `top top+=${overlapDistance}`,
-              scrub: true,
-            },
-          });
-        }
-
         sections
-          .filter((section, index) => section.id !== "hero" && (!desktopStack || index !== 1))
+          .filter((section) => section.id !== "hero")
           .forEach((section) => {
             gsap.fromTo(
               section,
@@ -169,6 +131,7 @@ export default function App() {
         <CTA />
       </main>
       <Footer />
+      <WhatsappButton />
     </div>
   );
 }

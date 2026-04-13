@@ -1,6 +1,7 @@
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 export function CTA() {
   return (
@@ -20,10 +21,14 @@ export function CTA() {
         </p>
         <div className="flex justify-center">
           <Button
+            asChild
             size="lg"
-            className="h-14 rounded-full bg-sky-600 px-10 text-base font-bold text-white shadow-2xl shadow-black/20 hover:bg-sky-500"
+            className="h-14 rounded-full bg-[#25D366] px-10 text-base font-bold text-white shadow-2xl shadow-emerald-500/30 hover:bg-[#1fb357]"
           >
-            Falar no WhatsApp agora
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <img src="/redesSociais/whatsapp.png" alt="" aria-hidden="true" className="mr-2 h-5 w-5" />
+              Falar no WhatsApp agora
+            </a>
           </Button>
         </div>
       </Container>

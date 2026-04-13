@@ -1,8 +1,9 @@
 import { useEffect, useState, type MouseEvent } from "react";
-import { Menu, MessageCircle, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS } from "@/content/landing";
 import { gsap } from "@/lib/gsap";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 export function Navbar() {
   const logoSrc = "/logo/logo.png";
@@ -91,9 +92,11 @@ export function Navbar() {
           </nav>
 
           <div className="hidden md:block">
-            <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold lg:text-base shadow-lg shadow-emerald-500/25 rounded-full px-6 lg:px-8 h-10 lg:h-11">
-              <MessageCircle className="w-4 h-4 mr-2" />
-              Falar no WhatsApp
+            <Button asChild className="bg-[#25D366] hover:bg-[#1fb357] text-white font-semibold lg:text-base shadow-lg shadow-emerald-500/30 rounded-full px-6 lg:px-8 h-10 lg:h-11">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <img src="/redesSociais/whatsapp.png" alt="" aria-hidden="true" className="mr-2 h-4 w-4" />
+                Falar no WhatsApp
+              </a>
             </Button>
           </div>
 
@@ -147,8 +150,11 @@ export function Navbar() {
             ))}
           </nav>
 
-          <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full mt-auto">
-            Falar no WhatsApp
+          <Button asChild className="bg-[#25D366] hover:bg-[#1fb357] text-white font-semibold rounded-full mt-auto">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+              <img src="/redesSociais/whatsapp.png" alt="" aria-hidden="true" className="mr-2 h-4 w-4" />
+              Falar no WhatsApp
+            </a>
           </Button>
         </aside>
       </div>
