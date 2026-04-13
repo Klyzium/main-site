@@ -5,7 +5,6 @@
   MaintenancePlan,
   NavLink,
   Plan,
-  Stat,
   Step,
   Testimonial,
 } from "@/types/landing";
@@ -84,13 +83,6 @@ export const STEPS: Step[] = [
   },
 ];
 
-export const RESULTS_STATS: Stat[] = [
-  { value: "+200", label: "Clientes atendidos" },
-  { value: "11%", label: "Conversão média atingida" },
-  { value: "5 dias", label: "Prazo médio de entrega" },
-  { value: "98%", label: "Satisfação dos clientes" },
-];
-
 export const TESTIMONIALS: Testimonial[] = [
   {
     name: "KELI DELICATA PMU",
@@ -100,18 +92,18 @@ export const TESTIMONIALS: Testimonial[] = [
     avatar: "/clientes/keli.png",
   },
   {
-    name: "Museu da Imigração da Ilha das Flores",
+    name: "Museu da I. da Ilha das Flores",
     role: "Museu de história",
     stars: 5,
     text: "Visual premium, site rápido e estratégia clara de conversão. Projeto acima do que eu esperava.",
     avatar: "/clientes/carimboP.png",
   },
   {
-    name: "Ana Beatriz Lima",
-    role: "Consultora de imagem",
+    name: "Jeazon Costa",
+    role: "Jornalista",
     stars: 5,
-    text: "Fizemos o site com hospedagem mensal e ficou muito mais fácil de manter. Processo leve e profissional.",
-    avatar: "/clientes/avatar-sem-foto.png",
+    text: "Atendimento impecável, site responsivo e com ótima performance. Superou minhas expectativas em todos os sentidos.",
+    avatar: "/logoClientes/jph.png",
   },
 ];
 
@@ -123,7 +115,7 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   },
   {
     name: "Cliente 02",
-    logo: "/logoClientes/miif.png",
+    logo: "/clientes/carimboP.png",
     url: "https://www.miif.org.br",
   },
   {
@@ -138,7 +130,7 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   },
   {
     name: "Cliente 05",
-    logo: "/logo/logo.png",
+    logo: "/logoClientes/jph.png",
     url: "https://klyzium.com.br",
   },
   {
