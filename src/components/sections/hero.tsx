@@ -165,9 +165,11 @@ export function Hero() {
 
       <a
         href="#como-funciona"
+        aria-label="Ir para a seção Como Funciona"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 hover:text-white/70 transition-colors animate-bounce"
       >
         <ChevronDown className="w-6 h-6" />
+        <span className="sr-only">Ir para a seção Como Funciona</span>
       </a>
     </section>
   );
