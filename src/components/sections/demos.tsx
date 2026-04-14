@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState, type MouseEvent } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
@@ -10,17 +10,25 @@ import { Draggable, gsap, ScrollTrigger } from "@/lib/gsap";
 export function Demos() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const stageRef = useRef<HTMLDivElement | null>(null);
-  const demoCardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
-  const draggedRef = useRef(false);
+  const demoCardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const dragMarkerXRef = useRef(0);
   const [activeDemo, setActiveDemo] = useState(0);
+  const [imageStep, setImageStep] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setImageStep((prev) => prev + 1);
+    }, 4000);
+
+    return () => window.clearInterval(interval);
+  }, []);
 
   useLayoutEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const updateDemoCards = (immediate = false) => {
       const total = DEMO_PROJECTS.length;
-      const gap = window.innerWidth < 768 ? 160 : 250;
+      const gap = window.innerWidth < 768 ? 205 : 330;
 
       demoCardRefs.current.forEach((card, index) => {
         if (!card) return;
@@ -31,15 +39,17 @@ export function Demos() {
 
         const isCenter = delta === 0;
         const x = delta * gap;
-        const scale = isCenter ? 1 : Math.max(0.72, 1 - Math.abs(delta) * 0.18);
-        const opacity = isCenter ? 1 : Math.max(0.22, 1 - Math.abs(delta) * 0.34);
+        const scale = isCenter ? 1 : Math.max(0.82, 1 - Math.abs(delta) * 0.12);
+        const opacity = isCenter ? 1 : Math.max(0.58, 1 - Math.abs(delta) * 0.18);
         const zIndex = 50 - Math.abs(delta);
         const rotationY = -delta * 16;
+        const brightness = isCenter ? 1 : Math.max(0.84, 1 - Math.abs(delta) * 0.08);
 
         gsap.to(card, {
           x,
           scale,
           opacity,
+          filter: `brightness(${brightness})`,
           rotateY: rotationY,
           zIndex,
           duration: immediate ? 0 : 0.6,
@@ -58,12 +68,6 @@ export function Demos() {
   const nextDemo = () => setActiveDemo((prev) => (prev + 1) % DEMO_PROJECTS.length);
   const prevDemo = () => setActiveDemo((prev) => (prev - 1 + DEMO_PROJECTS.length) % DEMO_PROJECTS.length);
 
-  const handleDemoClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    if (!draggedRef.current) return;
-    event.preventDefault();
-    draggedRef.current = false;
-  };
-
   useLayoutEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (!stageRef.current || !sectionRef.current) return;
@@ -73,12 +77,9 @@ export function Demos() {
       type: "x",
       bounds: { minX: -260, maxX: 260 },
       onPress() {
-        draggedRef.current = false;
         dragMarkerXRef.current = this.x;
       },
       onDrag() {
-        if (Math.abs(this.x) > 8) draggedRef.current = true;
-
         const delta = this.x - dragMarkerXRef.current;
         if (delta <= -threshold) {
           nextDemo();
@@ -94,9 +95,6 @@ export function Demos() {
           duration: 0.35,
           ease: "power3.out",
           overwrite: "auto",
-          onComplete: () => {
-            draggedRef.current = false;
-          },
         });
       },
     });
@@ -136,40 +134,60 @@ export function Demos() {
 
           <div
             ref={stageRef}
-            className="relative h-[320px] overflow-hidden md:h-[370px]"
+            className="relative h-[380px] overflow-hidden md:h-[470px]"
             style={{ touchAction: "pan-y" }}
           >
-            {DEMO_PROJECTS.map((demo, index) => (
-              <a
-                key={demo.title}
-                ref={(element) => {
-                  demoCardRefs.current[index] = element;
-                }}
-                href={demo.ctaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={handleDemoClick}
-                className="absolute left-1/2 top-1/2 block h-[250px] w-[182px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl border border-white/20 bg-slate-900/80 shadow-[0_28px_80px_rgba(2,6,23,0.55)] backdrop-blur md:h-[290px] md:w-[236px]"
-              >
+            {DEMO_PROJECTS.map((demo, index) => {
+              const totalImages = demo.images.length || 1;
+              const activeImageIndex = (imageStep + index) % totalImages;
+              const activeImage = demo.images[activeImageIndex] ?? demo.images[0];
+
+              return (
                 <div
-                  className="h-[56%] p-[1px]"
-                  style={{ backgroundImage: `linear-gradient(135deg, ${demo.accentFrom}, ${demo.accentTo})` }}
+                  key={demo.title}
+                  ref={(element) => {
+                    demoCardRefs.current[index] = element;
+                  }}
+                  className="absolute left-1/2 top-1/2 block h-[300px] w-[220px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl border border-white/25 bg-slate-900/65 shadow-[0_28px_80px_rgba(2,6,23,0.55)] backdrop-blur md:h-[400px] md:w-[300px]"
                 >
-                  <div className="relative h-full w-full overflow-hidden rounded-t-[15px] bg-slate-950/90">
-                    <img src={demo.image} alt={demo.title} className="h-full w-full object-contain opacity-90" loading="lazy" />
-                    <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-slate-950/90 to-transparent" />
-                    <span className="absolute left-3 top-3 rounded-full bg-slate-950/75 px-2.5 py-1 text-[10px] font-semibold text-slate-200">
-                      {demo.niche}
-                    </span>
+                  <div
+                    className="h-[74%] p-[1px]"
+                    style={{ backgroundImage: `linear-gradient(135deg, ${demo.accentFrom}, ${demo.accentTo})` }}
+                  >
+                    <div className="relative h-full w-full overflow-hidden rounded-t-[15px] bg-slate-950/90">
+                      <img
+                        src={activeImage}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute inset-0 h-full w-full scale-110 object-cover object-center opacity-35 blur-md"
+                        loading="lazy"
+                      />
+
+                      {demo.images.map((image, imageIndex) => (
+                        <img
+                          key={`${demo.title}-${image}`}
+                          src={image}
+                          alt={demo.title}
+                          className={`absolute inset-0 h-full w-full object-contain p-3 transition-opacity duration-3200 md:p-4 ${
+                            imageIndex === activeImageIndex ? "opacity-100" : "opacity-0"
+                          }`}
+                          loading="lazy"
+                        />
+                      ))}
+
+                      <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-slate-950/68 to-transparent" />
+                      <span className="absolute left-3 top-3 rounded-full bg-slate-950/80 px-2.5 py-1 text-[10px] font-semibold text-slate-100 md:text-[11px]">
+                        {demo.niche}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex h-[26%] flex-col justify-between px-4 py-3 md:px-5 md:py-4">
+                    <h4 className="text-sm font-bold leading-tight text-white md:text-lg">{demo.title}</h4>
                   </div>
                 </div>
-
-                <div className="flex h-[44%] flex-col justify-between px-4 py-3">
-                  <h4 className="text-sm font-bold text-white md:text-base">{demo.title}</h4>
-                  <div className="text-xs font-semibold text-sky-300">Abrir demo</div>
-                </div>
-              </a>
-            ))}
+              );
+            })}
           </div>
 
           <div className="mt-5 flex items-center justify-center gap-2">

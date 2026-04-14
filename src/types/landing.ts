@@ -40,8 +40,7 @@ export interface ClientLogo {
 export interface DemoProject {
   title: string;
   niche: string;
-  image: string;
-  ctaUrl: string;
+  images: string[];
   accentFrom: string;
   accentTo: string;
 }
