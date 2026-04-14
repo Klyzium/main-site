@@ -236,8 +236,8 @@ export function Hero() {
             data-hero-text
             className="text-lg max-[390px]:text-base lg:text-2xl text-slate-300 max-w-2xl mx-auto mb-5 sm:mb-4 lg:mb-10 leading-relaxed"
           >
-            Criamos sites, landing pages e sistemas web para atrair demanda no Google, converter contatos no
-            WhatsApp e escalar sua operação.
+            Criamos sites, landing pages, criacao de sistemas, desenvolvimento de sistema e aplicativos para
+            atrair demanda no Google, converter contatos no WhatsApp e escalar sua operacao.
           </p>
 
           <div className="flex flex-col mb-5 sm:flex-row gap-2 sm:gap-4 justify-center">

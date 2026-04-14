@@ -33,9 +33,9 @@ export const BENEFITS: Benefit[] = [
   },
   {
     icon: "target",
-    title: "SEO básico ou avançado",
+    title: "SEO, criacao de sistemas e aplicativos",
     description:
-      "Você escolhe o nível de SEO para melhorar o posicionamento no Google e atrair mais clientes qualificados.",
+      "Voce escolhe o nivel de SEO e o escopo de criacao de sistemas, desenvolvimento de sistema e aplicativos para crescer com consistencia.",
   },
   {
     icon: "barChart3",
@@ -202,6 +202,7 @@ export const PLANS: Plan[] = [
     period: "projeto personalizado",
     idealFor: "Ideal para clínicas, equipes, operações com fluxo interno e comércios de pequeno e médio porte.",
     features: [
+      "Criacao de sistemas web e aplicativos sob medida",
       "Desenvolvimento de sistema web sob medida",
       "Mapeamento de fluxo, regras de negócio e automações",
       "Painéis e funcionalidades específicas para operação diária",
@@ -245,7 +246,7 @@ export const FAQS: FaqItemData[] = [
   {
     question: "Vocês fazem apenas site ou também sistema personalizado?",
     answer:
-      "Atuamos nas duas frentes. Criamos landing pages e sites institucionais de alta conversão, e também desenvolvemos sistemas web sob medida para clínicas, equipes e operações com fluxo interno.",
+      "Atuamos nas duas frentes. Criamos landing pages e sites institucionais de alta conversao, e tambem fazemos criacao de sistemas, desenvolvimento de sistema e aplicativos sob medida para clinicas, equipes e operacoes com fluxo interno.",
   },
   {
     question: "Vocês configuram Google Maps e estratégia de avaliações?",
