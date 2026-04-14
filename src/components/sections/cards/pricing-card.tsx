@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import type { Plan } from "@/types/landing";
 
 interface PricingCardProps {
@@ -9,6 +10,8 @@ interface PricingCardProps {
 }
 
 export function PricingCard({ plan }: PricingCardProps) {
+  const whatsappUrl = buildWhatsAppUrl(`Olá! Tenho interesse no pacote ${plan.name}. Pode me passar mais detalhes?`);
+
   return (
     <div
       className={cn(
@@ -62,6 +65,7 @@ export function PricingCard({ plan }: PricingCardProps) {
       </ul>
 
       <Button
+        asChild
         className={cn(
           "w-full rounded-xl h-12 lg:h-14 font-bold text-base lg:text-lg",
           plan.highlight
@@ -69,7 +73,9 @@ export function PricingCard({ plan }: PricingCardProps) {
             : "bg-slate-900 hover:bg-slate-800 text-white",
         )}
       >
-        {plan.cta}
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+          {plan.cta}
+        </a>
       </Button>
     </div>
   );

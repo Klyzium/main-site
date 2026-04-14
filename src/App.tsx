@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { Benefits } from "@/components/sections/benefits";
 import { CTA } from "@/components/sections/cta";
+import { Demos } from "@/components/sections/demos";
 import { FAQ } from "@/components/sections/faq";
 import { Footer } from "@/components/sections/footer";
 import { Hero } from "@/components/sections/hero";
@@ -126,6 +127,7 @@ export default function App() {
         <Benefits />
         <HowItWorks />
         <Results />
+        <Demos />
         <Pricing />
         <FAQ />
         <CTA />

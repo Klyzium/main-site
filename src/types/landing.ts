@@ -37,6 +37,15 @@ export interface ClientLogo {
   url: string;
 }
 
+export interface DemoProject {
+  title: string;
+  niche: string;
+  image: string;
+  ctaUrl: string;
+  accentFrom: string;
+  accentTo: string;
+}
+
 export interface Plan {
   name: string;
   price: string;

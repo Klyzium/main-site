@@ -6,6 +6,32 @@ import { gsap } from "@/lib/gsap";
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null);
+  const handleScrollToPlans = () => {
+    const target = document.querySelector("#planos");
+    if (!target) return;
+
+    const headerOffset = 92;
+    const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    gsap.to(window, {
+      duration: 1.1,
+      ease: "power3.inOut",
+      scrollTo: { y: Math.max(targetTop, 0), autoKill: true },
+    });
+  };
+  const handleScrollToDemos = () => {
+    const target = document.querySelector("#demos");
+    if (!target) return;
+
+    const headerOffset = 92;
+    const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    gsap.to(window, {
+      duration: 1.1,
+      ease: "power3.inOut",
+      scrollTo: { y: Math.max(targetTop, 0), autoKill: true },
+    });
+  };
 
   useLayoutEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -217,6 +243,7 @@ export function Hero() {
           <div className="flex flex-col mb-5 sm:flex-row gap-2 sm:gap-4 justify-center">
             <Button
               size="lg"
+              onClick={handleScrollToPlans}
               className="bg-sky-500 hover:bg-sky-400 text-white font-bold text-base lg:text-lg max-[390px]:text-sm shadow-2xl shadow-sky-500/30 rounded-full px-8 lg:px-10 max-[390px]:px-6 h-14 lg:h-16 group"
             >
               Quero tirar meu projeto do papel
@@ -225,6 +252,7 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
+              onClick={handleScrollToDemos}
               className="border-white/20 text-white hover:bg-white/10 rounded-full px-8 lg:px-10 max-[390px]:px-6 h-14 lg:h-16 backdrop-blur font-semibold lg:text-lg"
             >
               Ver exemplos de sistemas e sites

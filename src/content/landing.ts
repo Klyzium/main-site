@@ -1,6 +1,7 @@
 ﻿import type {
   Benefit,
   ClientLogo,
+  DemoProject,
   FaqItemData,
   MaintenancePlan,
   NavLink,
@@ -213,7 +214,7 @@ export const PLANS: Plan[] = [
 
 export const MAINTENANCE_PLANS: MaintenancePlan[] = [
   {
-    name: "Essencial",
+    name: "Hospedagem Essencial",
     badge: "Base sólida",
     features: [
       "Backup semanal do projeto",
@@ -223,7 +224,7 @@ export const MAINTENANCE_PLANS: MaintenancePlan[] = [
     price: "R$ 29,90/mês",
   },
   {
-    name: "Profissional",
+    name: "Hospedagem Profissional",
     badge: "Mais recomendado",
     highlight: true,
     features: [
@@ -279,3 +280,46 @@ export const FAQS: FaqItemData[] = [
 ];
 
 export const SOCIAL_INITIALS = ["FC", "RM", "AL", "JP"];
+
+export const DEMO_PROJECTS: DemoProject[] = [
+  {
+    title: "Landing para Advocacia",
+    niche: "Advogados",
+    image: "/demos/demo-advogado.png",
+    ctaUrl: "https://klyzium.com.br",
+    accentFrom: "#38bdf8",
+    accentTo: "#6366f1",
+  },
+  {
+    title: "Landing para Clínica Odontológica",
+    niche: "Dentistas",
+    image: "/demos/demo-dentista.png",
+    ctaUrl: "https://klyzium.com.br",
+    accentFrom: "#22d3ee",
+    accentTo: "#06b6d4",
+  },
+  {
+    title: "Landing para Clínica Veterinária",
+    niche: "Veterinários",
+    image: "/clientes/carimboP.png",
+    ctaUrl: "https://klyzium.com.br",
+    accentFrom: "#60a5fa",
+    accentTo: "#22d3ee",
+  },
+  {
+    title: "Landing para Estética Avançada",
+    niche: "Esteticistas",
+    image: "/logoClientes/keliDelicata.jpg",
+    ctaUrl: "https://klyzium.com.br",
+    accentFrom: "#a78bfa",
+    accentTo: "#f472b6",
+  },
+  {
+    title: "Landing para Escritório Contábil",
+    niche: "Contador",
+    image: "/demos/demo-contador.png",
+    ctaUrl: "https://klyzium.com.br",
+    accentFrom: "#34d399",
+    accentTo: "#22c55e",
+  },
+];
