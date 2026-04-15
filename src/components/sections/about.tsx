@@ -11,34 +11,47 @@ export function About() {
         <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-black/10 blur-3xl" />
       </div>
 
-      <Container className="relative max-w-4xl text-center">
-        <h2 className="mb-6 text-4xl font-black leading-tight text-white lg:text-5xl">
-          Sobre Nós
-        </h2>
+      <Container className="relative max-w-6xl">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="text-center lg:text-left">
+            <h2 className="mb-6 text-center text-4xl font-black leading-tight text-white lg:text-5xl">
+              Sobre Nós
+            </h2>
 
-        <p className="mx-auto mb-6 max-w-3xl text-lg text-sky-50">
-          Somos programadores com experiência em desenvolvimento de sites, sistemas web e automações. Decidimos criar
-          a Klyzium para transformar conhecimento técnico em soluções digitais que realmente geram resultado para
-          empresas e profissionais.
-        </p>
+            <p className="mb-6 text-lg text-sky-50 lg:max-w-2xl">
+              Somos programadores com experiência em desenvolvimento de sites, sistemas web e automações. Decidimos criar
+              a Klyzium para transformar conhecimento técnico em soluções digitais que realmente geram resultado para
+              empresas e profissionais.
+            </p>
 
-        <p className="mx-auto mb-10 max-w-3xl text-lg text-sky-50">
-          Unimos estratégia, design e desenvolvimento para entregar projetos com alta performance e visual profissional. 
-          Nosso compromisso é atuar com transparência, atendimento humano e responsabilidade em
-          cada etapa, do planejamento ao suporte pós-entrega.
-        </p>
+            <p className="mb-10 text-lg text-sky-50 lg:max-w-2xl">
+              Unimos estratégia, design e desenvolvimento para entregar projetos com alta performance e visual profissional.
+              Nosso compromisso é atuar com transparência, atendimento humano e responsabilidade em
+              cada etapa, do planejamento ao suporte pós-entrega.
+            </p>
 
-        <div className="flex justify-center">
-          <Button
-            asChild
-            size="lg"
-            className="h-14 rounded-full bg-[#25D366] px-10 text-base font-bold text-white shadow-2xl shadow-emerald-500/30 hover:bg-[#1fb357]"
-          >
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              <img src="/redesSociais/whatsapp.png" alt="" aria-hidden="true" className="mr-2 h-5 w-5" />
-              Falar com a Klyzium no WhatsApp
-            </a>
-          </Button>
+            <div className="flex justify-center">
+              <Button
+                asChild
+                size="lg"
+                className="h-11 rounded-full bg-[#25D366] px-6 text-sm font-bold text-white shadow-2xl shadow-emerald-500/30 hover:bg-[#1fb357] sm:h-14 sm:px-10 sm:text-base"
+              >
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <img src="/redesSociais/whatsapp.png" alt="" aria-hidden="true" className="mr-2 h-5 w-5" />
+                  Falar com a Klyzium no WhatsApp
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          <div className="hidden lg:flex justify-end">
+            <img
+              src="/logo/logo.png"
+              alt="Logo da Klyzium"
+              className="w-full max-w-[520px] object-contain opacity-95 drop-shadow-[0_18px_40px_rgba(56,189,248,0.28)]"
+              loading="lazy"
+            />
+          </div>
         </div>
       </Container>
     </Section>

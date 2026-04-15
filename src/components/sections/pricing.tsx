@@ -143,7 +143,7 @@ export function Pricing() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Contratar {item.name}
+                      Contratar
                     </a>
                   </Button>
                 </div>

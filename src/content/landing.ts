@@ -19,6 +19,10 @@ export const NAV_LINKS: NavLink[] = [
   { label: "FAQ", href: "#faq" },
 ];
 
+export const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/place/Klyzium/@-22.9065325,-43.0892401,17z/data=!3m1!4b1!4m6!3m5!1s0x99854424ed4853:0x98ff254427c77ec8!8m2!3d-22.9065325!4d-43.0866652!16s%2Fg%2F11z5r6t3xm?authuser=0&entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D";
+export const GOOGLE_REVIEWS_RATING = "5,0";
+export const GOOGLE_REVIEWS_COUNT = 26;
+
 export const BENEFITS: Benefit[] = [
   {
     icon: "mousePointerClick",
