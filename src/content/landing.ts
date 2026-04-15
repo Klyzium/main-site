@@ -21,7 +21,7 @@ export const NAV_LINKS: NavLink[] = [
 export const BENEFITS: Benefit[] = [
   {
     icon: "mousePointerClick",
-    title: "Sites focados em conversão",
+    title: "Sites que geram conversão",
     description:
       "Estrutura pensada para transformar visitantes em contatos reais no WhatsApp, com CTA estratégico em pontos-chave.",
   },
@@ -41,7 +41,7 @@ export const BENEFITS: Benefit[] = [
     icon: "barChart3",
     title: "Decisão com dados",
     description:
-      "Integração com Google Analytics e Pixel para acompanhar resultados e evoluir o projeto com clareza.",
+      "Integração com Google Analytics para acompanhar resultados e evoluir o projeto com clareza.",
   },
   {
     icon: "shield",
@@ -161,11 +161,11 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   },
 ];
 
-export const PLANS: Plan[] = [
+export const PLANS: Plan[] = [ 
   {
     name: "Plano Essencial",
-    oldPrice: "R$ 899,90",
-    price: "R$ 799,90",
+    price: "R$ 959,90",
+    pixPrice: 'R$ 799,90',
     period: "investimento único",
     features: [
       "Criação de landing page com até 5 seções estratégicas",
@@ -179,8 +179,8 @@ export const PLANS: Plan[] = [
   },
   {
     name: "Plano Performance",
-    oldPrice: "R$ 2.499,90",
-    price: "R$ 2.299,90",
+    price: "R$ 2.649,90",
+    pixPrice: 'R$ 2.299,00',
     period: "investimento único",
     highlight: true,
     badge: "Mais escolhido",
@@ -199,6 +199,7 @@ export const PLANS: Plan[] = [
   {
     name: "Plano Sistema",
     price: "Sob consulta",
+    pixPrice: '',
     period: "projeto personalizado",
     idealFor: "Ideal para clínicas, equipes, operações com fluxo interno e comércios de pequeno e médio porte.",
     features: [

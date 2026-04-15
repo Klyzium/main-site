@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
-import type { Plan } from "@/types/landing";
+import type { Plan } from "@/types/landing"; 
 
 interface PricingCardProps {
   plan: Plan;
@@ -29,20 +29,17 @@ export function PricingCard({ plan }: PricingCardProps) {
         </div>
       ) : null}
 
-      <div className="mb-6">
+      <div className="flex flex-col mb-6">
         <h3 className={cn("text-lg lg:text-xl font-bold mb-1", plan.highlight ? "text-sky-300" : "text-slate-500")}>
           {plan.name}
         </h3>
-        {plan.oldPrice ? (
-          <div className={cn("text-sm lg:text-base line-through mb-1", plan.highlight ? "text-slate-400" : "text-slate-400")}>
-            {plan.oldPrice}
-          </div>
-        ) : null}
-        <div className="flex items-end gap-2">
-          <span className={cn("text-4xl lg:text-5xl font-black", plan.highlight ? "text-white" : "text-slate-900")}>
-            {plan.price}
+        <div className="flex items-center gap-2">
+          <span className={cn("text-4xl lg:text-5xl font-black flex items-center gap-2", plan.highlight ? "text-white" : "text-slate-900")}>
+            {plan.name.includes("Sistema") ? '' :  <span className="text-2xl text-end">A partir de </span>}  {plan.price}
           </span>
         </div>
+        {plan.name.includes("Sistema") ? '' :  <span className="text-1xl">em até 5x sem juros </span>}
+        {plan.name.includes("Sistema") ? '' :  <span className="text-1xl">ou {plan.pixPrice} no Pix ou Boleto</span>}
         <span className="text-sm lg:text-base text-slate-400">{plan.period}</span>
         {plan.idealFor ? (
           <p className={cn("mt-3 text-sm leading-relaxed", plan.highlight ? "text-slate-300" : "text-slate-600")}>
