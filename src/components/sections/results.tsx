@@ -7,7 +7,8 @@ import { CLIENT_LOGOS, TESTIMONIALS } from "@/content/landing";
 import { gsap } from "@/lib/gsap";
 
 const LOGO_LOOP = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
-const TESTIMONIAL_LOOP = [...TESTIMONIALS, ...TESTIMONIALS];
+const TESTIMONIAL_COPIES = 4;
+const TESTIMONIAL_LOOP = Array.from({ length: TESTIMONIAL_COPIES }, () => TESTIMONIALS).flat();
 
 export function Results() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -36,7 +37,7 @@ export function Results() {
           testimonialTrackRef.current,
           { xPercent: 0 },
           {
-            xPercent: -50,
+            xPercent: -(100 / TESTIMONIAL_COPIES),
             duration: 42,
             ease: "none",
             repeat: -1,
