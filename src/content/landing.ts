@@ -15,13 +15,18 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Resultados", href: "#resultados" },
   { label: "Planos", href: "#planos" },
+  { label: "Sobre Nós", href: "#sobre-nos" },
   { label: "FAQ", href: "#faq" },
 ];
+
+export const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/place/Klyzium/@-22.9065325,-43.0892401,17z/data=!3m1!4b1!4m6!3m5!1s0x99854424ed4853:0x98ff254427c77ec8!8m2!3d-22.9065325!4d-43.0866652!16s%2Fg%2F11z5r6t3xm?authuser=0&entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D";
+export const GOOGLE_REVIEWS_RATING = "5,0";
+export const GOOGLE_REVIEWS_COUNT = 26;
 
 export const BENEFITS: Benefit[] = [
   {
     icon: "mousePointerClick",
-    title: "Sites focados em conversão",
+    title: "Sites que geram conversão",
     description:
       "Estrutura pensada para transformar visitantes em contatos reais no WhatsApp, com CTA estratégico em pontos-chave.",
   },
@@ -41,7 +46,7 @@ export const BENEFITS: Benefit[] = [
     icon: "barChart3",
     title: "Decisão com dados",
     description:
-      "Integração com Google Analytics e Pixel para acompanhar resultados e evoluir o projeto com clareza.",
+      "Integração com Google Analytics para acompanhar resultados e evoluir o projeto com clareza.",
   },
   {
     icon: "shield",
@@ -161,11 +166,11 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   },
 ];
 
-export const PLANS: Plan[] = [
+export const PLANS: Plan[] = [ 
   {
     name: "Plano Essencial",
-    oldPrice: "R$ 899,90",
-    price: "R$ 799,90",
+    price: "R$ 959,90",
+    pixPrice: 'R$ 799,90',
     period: "investimento único",
     features: [
       "Criação de landing page com até 5 seções estratégicas",
@@ -179,8 +184,8 @@ export const PLANS: Plan[] = [
   },
   {
     name: "Plano Performance",
-    oldPrice: "R$ 2.499,90",
-    price: "R$ 2.299,90",
+    price: "R$ 2.649,90",
+    pixPrice: 'R$ 2.299,00',
     period: "investimento único",
     highlight: true,
     badge: "Mais escolhido",
@@ -199,6 +204,7 @@ export const PLANS: Plan[] = [
   {
     name: "Plano Sistema",
     price: "Sob consulta",
+    pixPrice: '',
     period: "projeto personalizado",
     idealFor: "Ideal para clínicas, equipes, operações com fluxo interno e comércios de pequeno e médio porte.",
     features: [

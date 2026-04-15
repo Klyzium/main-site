@@ -48,7 +48,7 @@ export interface DemoProject {
 export interface Plan {
   name: string;
   price: string;
-  oldPrice?: string;
+  pixPrice: string;
   period: string;
   highlight?: boolean;
   badge?: string;

@@ -78,7 +78,7 @@ export function Pricing() {
           />
 
           <div className="grid grid-cols-1 gap-8 items-start md:grid-cols-3">
-            {PLANS.map((plan) => (
+            {PLANS.map((plan) => ( 
               <PricingCard key={plan.name} plan={plan} />
             ))}
           </div>
@@ -143,7 +143,7 @@ export function Pricing() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Contratar {item.name}
+                      Contratar
                     </a>
                   </Button>
                 </div>

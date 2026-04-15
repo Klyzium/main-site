@@ -23,7 +23,7 @@ export function Benefits() {
         <SectionHeader
           title={
             <>
-              Tudo que você precisa para <span className="text-sky-500">vender mais com seu site</span>
+              Por que escolher a  <span className="text-sky-500">Klyzium?</span>
             </>
           }
           description="Projetos com estratégia comercial, visual premium e foco real em contato humanizado pelo WhatsApp."

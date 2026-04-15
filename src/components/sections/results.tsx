@@ -3,7 +3,8 @@ import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/sections/section-header";
 import { TestimonialCard } from "@/components/sections/cards/testimonial-card";
-import { CLIENT_LOGOS, TESTIMONIALS } from "@/content/landing";
+import { Button } from "@/components/ui/button";
+import { CLIENT_LOGOS, GOOGLE_REVIEWS_COUNT, GOOGLE_REVIEWS_RATING, GOOGLE_REVIEWS_URL, TESTIMONIALS } from "@/content/landing";
 import { gsap } from "@/lib/gsap";
 
 const LOGO_LOOP = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
@@ -89,7 +90,7 @@ export function Results() {
             </div>
           </div>
 
-          <p className="mb-8 text-center text-sm text-slate-400">Clique em uma marca para visitar o site do cliente.</p>
+          <p className="mb-8 text-center text-sm text-slate-400">Clique em uma marca para visitar nossos cliente.</p>
 
           <div className="overflow-hidden">
             <div ref={testimonialTrackRef} className="flex w-max gap-6">
@@ -99,6 +100,20 @@ export function Results() {
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="mt-8 flex flex-col items-center gap-4 text-center">
+            <p className="text-sm text-sky-100">
+              {GOOGLE_REVIEWS_RATING} no Google - {GOOGLE_REVIEWS_COUNT} avaliações
+            </p>
+            <Button
+              asChild
+              className="h-11 rounded-full border border-white/40 bg-white/95 px-6 text-slate-900 shadow-md shadow-slate-950/20 transition-[background-color,color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-sky-500/35"
+            >
+              <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">
+                Ver perfil da Klyzium no Google Maps
+              </a>
+            </Button>
           </div>
         </Container>
       </div>
