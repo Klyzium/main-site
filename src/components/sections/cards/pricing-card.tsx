@@ -15,9 +15,9 @@ export function PricingCard({ plan }: PricingCardProps) {
   return (
     <div
       className={cn(
-        "relative rounded-2xl p-8",
+        "relative rounded-2xl p-8 h-[45rem]",
         plan.highlight
-          ? "bg-gradient-to-br from-slate-900 to-blue-950 text-white shadow-2xl shadow-blue-900/30 ring-2 ring-sky-500/50 scale-105"
+          ? "bg-gradient-to-br from-slate-900 to-blue-950 text-white shadow-2xl shadow-blue-900/30 ring-2 ring-sky-500/50 scale-100"
           : "bg-slate-50 border border-slate-100 text-slate-900",
       )}
     >
@@ -39,7 +39,7 @@ export function PricingCard({ plan }: PricingCardProps) {
           </span>
         </div>
         {plan.name.includes("Sistema") ? '' :  <span className="text-1xl">em até 5x sem juros </span>}
-        {plan.name.includes("Sistema") ? '' :  <span className="text-1xl">ou {plan.pixPrice} no Pix ou Boleto</span>}
+        {plan.name.includes("Sistema") ? '' :  <span className="text-1xl font-extrabold">ou {plan.pixPrice} no Pix ou Boleto</span>}
         <span className="text-sm lg:text-base text-slate-400">{plan.period}</span>
         {plan.idealFor ? (
           <p className={cn("mt-3 text-sm leading-relaxed", plan.highlight ? "text-slate-300" : "text-slate-600")}>
@@ -64,7 +64,7 @@ export function PricingCard({ plan }: PricingCardProps) {
       <Button
         asChild
         className={cn(
-          "w-full rounded-xl h-12 lg:h-14 font-bold text-base lg:text-lg",
+          "w-[80%] rounded-xl h-12 lg:h-14 font-bold text-base lg:text-lg absolute bottom-[1rem]",
           plan.highlight
             ? "bg-sky-500 hover:bg-sky-400 text-white shadow-lg shadow-sky-500/30"
             : "bg-slate-900 hover:bg-slate-800 text-white",

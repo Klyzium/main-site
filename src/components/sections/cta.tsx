@@ -5,7 +5,7 @@ import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 export function CTA() {
   return (
-    <Section className="relative overflow-hidden bg-gradient-to-br from-sky-500 to-indigo-600">
+    <Section className="relative overflow-hidden bg-slate-900">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-black/10 blur-3xl" />

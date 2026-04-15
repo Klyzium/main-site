@@ -182,8 +182,8 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
             </ul>
             <p className="mt-3">
               Para exercer seus direitos, entre em contato conosco pelo e-mail:{" "}
-              <a href="mailto:contato@klyzium.com" className="text-sky-400 hover:underline">
-                contato@klyzium.com
+              <a href="mailto:klyzium@gmail.com" className="text-sky-400 hover:underline">
+               klyzium@gmail.com
               </a>
               .
             </p>
@@ -208,8 +208,8 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
               <strong className="text-slate-300">Klyzium – Web Creation &amp; Software Development</strong>
               <br />
               E-mail:{" "}
-              <a href="mailto:contato@klyzium.com" className="text-sky-400 hover:underline">
-                contato@klyzium.com
+              <a href="mailto:klyzium@gmail.com" className="text-sky-400 hover:underline">
+                klyzium@gmail.com
               </a>
             </p>
             <p className="mt-3 text-slate-500 text-xs">

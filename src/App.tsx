@@ -129,8 +129,8 @@ export default function App() {
         <Results />
         <Demos />
         <Pricing />
-        <FAQ />
         <CTA />
+        <FAQ />
       </main>
       <Footer />
       <WhatsappButton />

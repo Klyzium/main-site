@@ -89,7 +89,7 @@ export function Results() {
             </div>
           </div>
 
-          <p className="mb-8 text-center text-sm text-slate-400">Clique em uma marca para visitar o site do cliente.</p>
+          <p className="mb-8 text-center text-sm text-slate-400">Clique em uma marca para visitar nossos cliente.</p>
 
           <div className="overflow-hidden">
             <div ref={testimonialTrackRef} className="flex w-max gap-6">
