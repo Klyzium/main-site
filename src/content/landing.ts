@@ -132,7 +132,7 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   {
     name: "Cliente 05",
     logo: "/logoClientes/jph.png",
-    url: "https://klyzium.com.br",
+    url: "jornaldaprimeirahora.com.br",
   },
   {
     name: "Cliente 06",
