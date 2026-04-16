@@ -4,13 +4,31 @@
     <!-- Google Tag Manager -->
     <script nonce="klyzium-nonce-2026">
       (function (w, d, s, l, i) {
+        var tt = w.trustedTypes;
+        var policy = tt && tt.defaultPolicy;
+        if (tt && !policy && tt.createPolicy) {
+          try {
+            policy = tt.createPolicy("default", {
+              createHTML: function (value) {
+                return value;
+              },
+              createScriptURL: function (value) {
+                return value;
+              },
+            });
+          } catch (e) {
+            policy = null;
+          }
+        }
+
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
         var f = d.getElementsByTagName(s)[0],
           j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
+          dl = l != "dataLayer" ? "&l=" + l : "",
+          gtmSrc = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        j.src = policy ? policy.createScriptURL(gtmSrc) : gtmSrc;
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-W6NNK5ZJ");
     </script>
