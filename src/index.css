@@ -147,3 +147,16 @@
 .whatsapp-pulse {
   animation: whatsapp-pulse 1.5s ease-in-out infinite;
 }
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+}

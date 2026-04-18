@@ -71,7 +71,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
         </div>
 
         {/* Scrollable content */}
-        <div className="overflow-y-auto px-6 py-5 text-slate-300 text-sm leading-relaxed space-y-6 scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-transparent">
+        <div className="overflow-y-auto hide-scrollbar px-6 py-5 text-slate-300 text-sm leading-relaxed space-y-6">
 
           <section>
             <h3 className="text-slate-100 font-semibold text-base mb-2">1. Termos de Uso</h3>
