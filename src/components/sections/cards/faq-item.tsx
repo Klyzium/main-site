@@ -13,7 +13,7 @@ export function FaqItem({ question, answer, isOpen, onToggle }: FaqItemProps) {
     <div className="bg-white rounded-xl border border-slate-100 overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between px-6 py-5 text-left gap-4 hover:bg-slate-50 transition-colors"
+        className="w-full flex cursor-pointer items-center justify-between px-6 py-5 text-left gap-4 hover:bg-slate-50 transition-colors"
       >
         <span className="font-semibold text-slate-900 text-sm lg:text-lg">{question}</span>
         <ChevronDown

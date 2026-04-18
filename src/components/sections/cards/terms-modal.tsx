@@ -51,7 +51,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
           <button
             onClick={onClose}
             aria-label="Fechar modal"
-            className="text-slate-400 hover:text-slate-100 transition-colors p-1 rounded-md hover:bg-slate-700"
+            className="text-slate-400 cursor-pointer hover:text-slate-100 transition-colors p-1 rounded-md hover:bg-slate-700"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -222,7 +222,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
         <div className="px-6 py-4 border-t border-slate-700 shrink-0 flex justify-end">
           <button
             onClick={onClose}
-            className="px-5 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-white text-sm font-semibold transition-colors"
+            className="px-5 py-2 cursor-pointer rounded-lg bg-sky-500 hover:bg-sky-400 text-white text-sm font-semibold transition-colors"
           >
             Entendi
           </button>
