@@ -101,7 +101,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Museu da I. da Ilha das Flores",
     role: "Museu de história",
     stars: 5,
-    text: "Visual premium, site rápido e estratégia clara de conversão. Projeto acima do que eu esperava.",
+    text: "Projeto de revitalização do site do museu da imigração muito bem feito.",
     avatar: "/clientes/carimboP.png",
   },
   {
@@ -110,6 +110,13 @@ export const TESTIMONIALS: Testimonial[] = [
     stars: 5,
     text: "Atendimento impecável, site responsivo e com ótima performance. Superou minhas expectativas em todos os sentidos.",
     avatar: "/logoClientes/jph.png",
+  },
+  {
+    name: "Jaqueline da Conceição",
+    role: "Psicanalista Clínica",
+    stars: 5,
+    text: "Super indico, ótimo trabalho.",
+    avatar: "/clientes/jaqueline.png",
   },
 ];
 
@@ -141,8 +148,8 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   },
   {
     name: "Cliente 06",
-    logo: "/logo/logo.png",
-    url: "https://klyzium.com.br",
+    logo: "/logoClientes/jaqueline.png",
+    url: "https://www.jaquelinepsicanalista.com.br/",
   },
   {
     name: "Cliente 07",
